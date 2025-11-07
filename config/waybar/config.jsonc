@@ -1,0 +1,82 @@
+{
+	"modules-left": [
+		"ext/workspaces",
+		"custom/sep",
+		"dwl/window#layout",
+		"custom/sep",
+		"dwl/window#title"
+	],
+	"modules-right": [
+		"tray",
+		"custom/sep",
+		"battery",
+		"custom/sep",
+		"network",
+		"custom/sep",
+		"cpu",
+		"custom/sep",
+		"memory",
+		"custom/sep",
+		"clock",
+	],
+	"clock": {
+		"format-alt": "{:%Y-%m-%d}",
+		"tooltip": false
+	},
+	"cpu": {
+		"format": "CPU: {usage}%",
+		"tooltip": false
+	},
+	"memory": {
+		"format": "Mem: {used}GiB"
+	},
+	"disk": {
+		"interval": 60,
+		"path": "/",
+		"format": "Disk: {free}"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"network": {
+		"format": "{ifname}",
+		"format-wifi": "  {signalStrength}%",
+		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
+		"format-disconnected": "", //An empty format will hide the module.
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-wifi": "{essid}",
+		"max-length": 50
+	},
+	"ext/workspaces": {
+		"format": "{icon}",
+		"ignore-hidden": false,
+		"on-click": "activate",
+		"sort-by-id": true,
+	},
+	"dwl/tags": {
+		"num-tags": 6
+	},
+	"dwl/window#layout": {
+		"format": "[{layout}]",
+	},
+	"dwl/window#title": {
+		"format": "{title}"
+	},
+	"custom/sep": {
+		"format": "|",
+		"interval": 0
+	}
+}
