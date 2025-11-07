@@ -9,15 +9,13 @@
 	"modules-right": [
 		"tray",
 		"custom/sep",
-		"bluetooth",
+		"custom/pipewire",
+		"custom/sep",
+		"backlight",
 		"custom/sep",
 		"battery",
 		"custom/sep",
 		"network",
-		"custom/sep",
-		"cpu",
-		"custom/sep",
-		"memory",
 		"custom/sep",
 		"clock",
 	],
@@ -25,17 +23,12 @@
 		"format-alt": "{:%Y-%m-%d}",
 		"tooltip": false
 	},
-	"cpu": {
-		"format": "CPU: {usage}%",
-		"tooltip": false
-	},
-	"memory": {
-		"format": "Mem: {used}GiB"
-	},
-	"disk": {
-		"interval": 60,
-		"path": "/",
-		"format": "Disk: {free}"
+	"custom/pipewire": {
+		"tooltip": false,
+		"max-length": 6,
+		"signal": 8,
+		"restart-interval": 0,
+		"exec": "$HOME/.config/waybar/scripts/pipewire.sh"
 	},
 	"battery": {
 		"states": {
@@ -52,9 +45,6 @@
 			"",
 			""
 		]
-	},
-	"bluetooth": {
-		"format-disabled": "", //An empty format will hide the module.
 	},
 	"network": {
 		"format": "{ifname}",
