@@ -9,6 +9,8 @@
 	"modules-right": [
 		"tray",
 		"custom/sep",
+		"bluetooth",
+		"custom/sep",
 		"battery",
 		"custom/sep",
 		"network",
@@ -50,6 +52,9 @@
 			"",
 			""
 		]
+	},
+	"bluetooth": {
+		"format-disabled": "", //An empty format will hide the module.
 	},
 	"network": {
 		"format": "{ifname}",
