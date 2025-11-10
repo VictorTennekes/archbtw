@@ -1,0 +1,112 @@
+{
+	"modules-left": [
+		"custom/logo",
+		"ext/workspaces",
+		"custom/sep",
+		"dwl/window#title"
+	],
+	"modules-right": [
+		"tray",
+		"custom/sep",
+		"wireplumber",
+		"wireplumber#source",
+		"backlight",
+		"battery",
+		"network",
+		"clock"
+	],
+	"custom/logo": {
+		"format": "    ",
+		"tooltip": false
+	},
+	"ext/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"active": "●"
+		},
+		"ignore-hidden": false,
+		"on-click": "activate",
+		"sort-by-id": true,
+	},
+	"wireplumber": {
+		"node-type": "Audio/Sink",
+		"format-muted": " ",
+		"format": "{volume}% {icon}",
+		"tooltip": false,
+		"format-icons": [
+			" ",
+			" ",
+		]
+	},
+	"wireplumber#source": {
+		"node-type": "Audio/Source",
+		"format": "{volume}% 󰍬",
+		"format-muted": "󰍭",
+		"tooltip": false
+	},
+	"clock": {
+		"format-alt": "{:%Y-%m-%d}",
+		"tooltip": false
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"backlight": {
+		"format": "{icon}",
+		"tooltip": true,
+		"tooltip-format": "{percent}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"network": {
+		"format": "{ifname}",
+		"format-wifi": "{icon} {signalStrength}%",
+		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
+		"format-disconnected": "󰤭", //An empty format will hide the module.
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-wifi": "{essid}",
+		"on-click": "ghostty -e impala",
+		"max-length": 50,
+		"format-icons": [
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨",
+		]
+	},
+	"dwl/window#title": {
+		"format": "{title}"
+	},
+	"custom/sep": {
+		"tooltip": false,
+		"format": "|",
+		"interval": "once"
+	}
+}

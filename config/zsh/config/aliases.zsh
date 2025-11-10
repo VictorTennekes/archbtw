@@ -19,3 +19,5 @@ alias ff="fzf --preview 'bat --color=always {}' --preview-window '~3' --multi --
 alias cat='bat'
 alias cd='z'
 alias ls='eza --icons --group-directories-first'
+
+alias update-mirrors='sudo reflector --verbose --country NL,BE,DE,GB --protocol https --sort rate --latest 20 --download-timeout 6 --save /etc/pacman.d/mirrorlist'
