@@ -11,8 +11,26 @@ CLEAN_SCRIPT ?= scripts/clean
 # Default target when running `make`
 all: install
 
-# Main installation orchestrator: first packages, then configs.
-install: configs
+# Check if paru exists, and install if missing
+check_paru:
+	@command -v paru >/dev/null 2>&1 || { \
+		echo "Paru not found. Installing..."; \
+		sudo pacman -S --needed --noconfirm base-devel git; \
+		git clone https://aur.archlinux.org/paru.git /tmp/paru; \
+		cd /tmp/paru && makepkg -si --noconfirm; \
+		rm -rf /tmp/paru; \
+	}
+
+# Generate package list from current system
+generate_pkglist:
+	@echo "Generating package list..."
+	pacman -Qqe > requirements/pkglist.txt
+	paru -Qqm >> requirements/pkglist.txt
+
+# Main target for install, depends on check_paru and generate_pkglist
+install: check_paru configs
+	@echo "Installing packages..."
+	paru -S --needed - < requirements/pkglist.txt
 	@echo "✅ All setup complete!"
 
 # The clean target now calls the clean script and removes downloaded files.

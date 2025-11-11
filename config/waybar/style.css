@@ -55,7 +55,7 @@ button:hover {
 
 #custom-logo {
 	font-size: 6px;
-    background-image: url('/home/victor/.config/mango/waybar/assets/MT-logo-catppuccin.png');
+    background-image: url('/home/victor/.config/assets/MT-logo-catppuccin.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
