@@ -1,0 +1,3 @@
+clip() {
+    cat "$@" | wl-copy
+}
