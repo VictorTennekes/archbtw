@@ -1,0 +1,4 @@
+{
+	"$schema": "/etc/xdg/swaync/configSchema.json",
+	"control-center-width": 400
+}
