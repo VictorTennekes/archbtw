@@ -1,10 +1,13 @@
 @import "catppuccin-mocha"
 
 configuration {
-    modi: "drun,run";                    // Available modes
+    modi: "drun";                    // Available modes
     show-icons: true;                    // Show app icons
     font: "JetBrainsMono Nerd Font 12";  // Global font
 	hide-scrollbar: true;
+
+	kb-row-up: "Alt+k";
+	kb-row-down: "Alt+j";
 }
 
 * {
