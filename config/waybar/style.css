@@ -27,38 +27,40 @@
 @define-color crust #11111b;
 
 * {
-    font-family: "JetBrainsMono NF", monospace;
-    font-size: 15px;
+	font-family: "JetBrainsMono NF", monospace;
+	font-size: 15px;
 	background-color: @base;
 }
 
 window#waybar {
-    color: @text;
+	color: @text;
 }
 
 #workspaces button {
-    padding: 0 6px;
-    color: @text;
+	padding: 0 4px;
+	color: @text;
 	font-weight: bold;
 }
+
 #workspaces button.active {
-    color: @text;
+	color: @text;
 }
+
 #workspaces button.hidden {
-    color: @overlay0;
+	color: @overlay0;
 	font-weight: normal;
 }
 
 button:hover {
-    background: inherit;
+	background: inherit;
 }
 
 #custom-logo {
 	font-size: 6px;
-    background-image: url('/home/victor/.config/assets/MT-logo-catppuccin.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+	background-image: url('/home/victor/.config/assets/MT-logo-catppuccin.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
 	padding: 2px 10px;
 	background-origin: content-box;
 }
@@ -66,43 +68,66 @@ button:hover {
 .modules-left {
 	padding-left: 5px;
 }
+
 .modules-right {
 	padding-right: 5px;
 }
 
-#clock,
+#clock {
+	padding: 2px;
+}
+
+#wireplumber {
+	padding: 2px;
+}
+
+#custom-notification,
 #custom-sep,
-#battery,
-#network,
-#wireplumber,
 #tray {
-    padding: 0 10px;
-    color: @text;
+	padding: 0 10px;
+	color: @text;
 }
 
 #custom-sep {
-    color: @text;
+	color: @text;
 }
 
 #clock {
-    color: @text;
+	color: @text;
 }
 
 #backlight {
 	font-size: 18px;
-	padding-left: 15px;
-	padding-right: 5px;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
-#battery {
-    color: @green;
-	padding-left: 20px;
+#battery,
+#network {
+	padding-right: 8px;
+}
+
+#bluetooth {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+#battery.good {
+	color: @green;
+}
+
+#battery.warning {
+	color: @peach;
+}
+
+#battery.critical {
+	color: @red;
 }
 
 #network {
-    color: @lavender;
+	color: @lavender;
 }
 
 #network.disconnected {
-    color: @red;
+	color: @red;
 }

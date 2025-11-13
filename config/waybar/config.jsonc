@@ -2,7 +2,8 @@
 	"modules-left": [
 		"custom/logo",
 		"ext/workspaces",
-		"custom/sep",
+	],
+	"modules-center": [
 		"dwl/window#title"
 	],
 	"modules-right": [
@@ -10,10 +11,15 @@
 		"custom/sep",
 		"wireplumber",
 		"wireplumber#source",
+		"custom/sep",
 		"backlight",
+		"custom/sep",
 		"battery",
 		"network",
-		"clock"
+		"bluetooth",
+		"custom/sep",
+		"clock",
+		"custom/notification"
 	],
 	"custom/logo": {
 		"format": "    ",
@@ -27,6 +33,26 @@
 		"ignore-hidden": false,
 		"on-click": "activate",
 		"sort-by-id": true,
+	},
+	"custom/notification": {
+		"tooltip": true,
+		"format": "{0} {icon}",
+		"format-icons": {
+			"notification": "󱅫",
+			"none": "󰂜",
+			"dnd-notification": "󰂠",
+			"dnd-none": "󰪓",
+			"inhibited-notification": "󰂛",
+			"inhibited-none": "󰪑",
+			"dnd-inhibited-notification": "󰂛",
+			"dnd-inhibited-none": "󰪑"
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
 	},
 	"wireplumber": {
 		"node-type": "Audio/Sink",
@@ -50,19 +76,34 @@
 	},
 	"battery": {
 		"states": {
-			"good": 95,
-			"warning": 30,
+			"good": 100,
+			"warning": 50,
 			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
-		"format-plugged": " {capacity}%",
+		"format": "{icon}",
+		"format-plugged": "󰂄",
+		"format-charging": "󰂄",
 		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
-		]
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹"
+		],
+		"tooltip-format": "{capacity}%"
+	},
+	"bluetooth": {
+		"format-disabled": "󰂲",
+		"format-enabled": "󰂯",
+		"format-off": "󰂲",
+		"format-on": "󰂯",
+		"format-connected": "󱡏",
+		"on-click": "ghostty -e bluetui"
 	},
 	"backlight": {
 		"format": "{icon}",
@@ -83,15 +124,16 @@
 			"",
 			"",
 			""
-		]
+		],
+		"on-click": "pkill gammastep || gammastep -O 4000 &"
 	},
 	"network": {
 		"format": "{ifname}",
-		"format-wifi": "{icon} {signalStrength}%",
+		"format-wifi": "{icon}",
 		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
 		"format-disconnected": "󰤭", //An empty format will hide the module.
 		"tooltip-format-ethernet": "{ifname} ",
-		"tooltip-format-wifi": "{essid}",
+		"tooltip-format-wifi": "{essid} {signalStrength}%",
 		"on-click": "ghostty -e impala",
 		"max-length": 50,
 		"format-icons": [
@@ -102,7 +144,8 @@
 		]
 	},
 	"dwl/window#title": {
-		"format": "{title}"
+		"format": "{title}",
+		"max-length": 50
 	},
 	"custom/sep": {
 		"tooltip": false,
