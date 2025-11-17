@@ -4,11 +4,12 @@
 		"ext/workspaces",
 	],
 	"modules-center": [
-		"dwl/window#title"
+		"dwl/window#title",
 	],
 	"modules-right": [
 		"tray",
 		"custom/sep",
+		"mpris",
 		"wireplumber",
 		"wireplumber#source",
 		"custom/sep",
@@ -21,6 +22,22 @@
 		"clock",
 		"custom/notification"
 	],
+	"mpris": {
+		"tooltip-format": "{dynamic}",
+		"format": "{player_icon}",
+		"format-paused": "{status_icon}",
+		"dynamic-order": [
+			"title",
+			"artist"
+		],
+		"player-icons": {
+			"default": "▶ ",
+			"mpv": "🎵 "
+		},
+		"status-icons": {
+			"paused": "⏸ "
+		}
+	},
 	"custom/logo": {
 		"format": "    ",
 		"tooltip": false
