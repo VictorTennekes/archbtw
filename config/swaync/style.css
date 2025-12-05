@@ -28,7 +28,7 @@
 
 * {
 	all: unset;
-	font-size: 14px;
+	font-size: 12px;
 	font-family: "JetBrainsMono Nerd Font";
 	transition: 200ms;
 }
@@ -45,10 +45,6 @@ trough slider {
 	background-color: @blue;
 }
 
-trough {
-	background-color: @surface0;
-}
-
 /* notifications */
 
 .notification-background {
@@ -61,7 +57,6 @@ trough {
 .notification-background .notification {
 	padding: 7px;
 }
-
 
 .notification .notification-content {
 	margin: 7px;
@@ -139,26 +134,19 @@ trough {
 .control-center {
 	background-color: @base;
 	color: @text;
-	padding: 14px;
+	padding: 2px;
 }
 
 .control-center .notification-background {
 	margin: 4px 10px;
 }
 
-.control-center .notification-background .notification {}
 
 .control-center .notification-background .notification.low {
 	opacity: 0.8;
 }
 
-.control-center .widget-title>label {
-	color: @text;
-	font-size: 1.3em;
-}
-
 .control-center .widget-title button {
-	color: @text;
 	background-color: @surface0;
 	padding: 8px;
 }
@@ -259,7 +247,7 @@ scrollbar trough {
 }
 
 .widget-menubar>box>.menu-button-bar>button>label {
-	font-size: 3rem;
+	font-size: rrem;
 	padding: 0.5rem 2rem;
 }
 
@@ -278,14 +266,7 @@ scrollbar trough {
 	font-size: 2rem;
 }
 
-.widget-buttons-grid {
-	padding-top: 1rem;
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button label {
-	font-size: 2.5rem;
-}
-
+/* Volume widget */
 .widget-volume {
 	padding: 1rem 0;
 }
@@ -299,19 +280,67 @@ scrollbar trough {
 	background: @sapphire;
 }
 
+/* Backlight widget */
+.widget-backlight {
+	padding: 1rem 0;
+}
+
 .widget-backlight trough highlight {
 	background: @yellow;
 }
 
 .widget-backlight label {
-	font-size: 1.5rem;
 	color: @yellow;
+	padding: 0 1rem;
 }
 
-.widget-backlight .KB {
-	padding-bottom: 1rem;
+/* Volume widget */
+.widget-volume {
+	padding: 1rem 0;
 }
 
-.image {
-	padding-right: 0.5rem;
+.widget-volume label {
+	color: @sapphire;
+	padding: 0 1rem;
+}
+
+.widget-volume trough highlight {
+	background: @sapphire;
+}
+
+/* Backlight widget */
+.widget-backlight {
+	padding: 1rem 0;
+}
+
+.widget-backlight trough highlight {
+	background: @yellow;
+}
+
+.widget-backlight label {
+	color: @yellow;
+	padding: 0 1rem;
+}
+
+.widget-buttons-grid {
+	padding-top: 1rem;
+	margin: 2px;
+}
+
+/* Reduce horizontal gap between buttons in the grid */
+.widget-buttons-grid>flowbox {
+	/* flowbox child spacing */
+	padding: 0;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild {
+	margin: 2px 4px;
+	/* vertical 2px, horizontal 4px (adjust lower if needed) */
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+	padding: 4px 6px;
+	/* controls button “size” */
+	margin: 0;
+	/* remove extra outer space */
 }

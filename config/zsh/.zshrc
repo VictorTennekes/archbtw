@@ -6,6 +6,7 @@ source ${ZDOTDIR}/config/completions.zsh
 source ${ZDOTDIR}/config/functions.zsh
 source ${ZDOTDIR}/config/history.zsh
 source ${ZDOTDIR}/config/integrations.zsh
+source ${ZDOTDIR}/config/opts.zsh
 
 antidote load ${ZDOTDIR}/zsh_plugins.txt
 eval "$(starship init zsh)"

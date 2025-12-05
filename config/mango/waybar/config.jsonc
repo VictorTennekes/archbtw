@@ -1,0 +1,121 @@
+{
+	"layer": "top",
+	"position": "top",
+	"height": 26,
+	"spacing": 0,
+	"margin": "2 3 2 3",
+	"reload_style_on_change": true,
+	"modules-left": [
+		"ext/workspaces",
+		"dwl/window"
+	],
+	"modules-center": [],
+	"modules-right": [
+		"tray",
+		"custom/sep",
+		"wireplumber",
+		"backlight",
+		"custom/sep",
+		"battery",
+		"network",
+		"bluetooth",
+		"custom/sep",
+		"clock"
+	],
+	"custom/sep": {
+		"tooltip": false,
+		"format": "|",
+		"interval": "once"
+	},
+	"ext/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"active": "●"
+		},
+		"ignore-hidden": false,
+		"on-click": "activate"
+	},
+	"wireplumber": {
+		"node-type": "Audio/Sink",
+		"format-muted": " 0% ",
+		"format": "{icon}{volume}% ",
+		"tooltip": false,
+		"format-icons": [
+			" ",
+			" "
+		]
+	},
+	"backlight": {
+		"format": "{icon}",
+		"tooltip": true,
+		"tooltip-format": "{percent}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"on-click": "pkill gammastep || gammastep -O 4000 &"
+	},
+	"battery": {
+		"states": {
+			"good": 100,
+			"warning": 50,
+			"critical": 15
+		},
+		"format": "{icon}",
+		"format-plugged": "󰂄",
+		"format-charging": "󰂄",
+		"format-icons": [
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹"
+		],
+		"tooltip-format": "{capacity}%"
+	},
+	"network": {
+		"format": "{ifname}",
+		"format-wifi": "{icon}",
+		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
+		"format-disconnected": "󰤭",
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-wifi": "{essid} {signalStrength}%",
+		"on-click": "$TERMINAL -e impala",
+		"max-length": 50,
+		"format-icons": [
+			"󰤟",
+			"󰤢",
+			"󰤥",
+			"󰤨"
+		]
+	},
+	"bluetooth": {
+		"format-disabled": "󰂲",
+		"format-enabled": "󰂯",
+		"format-off": "󰂲",
+		"format-on": "󰂯",
+		"format-connected": "󱡏",
+		"on-click": "$TERMINAL -e bluetui"
+	},
+	"clock": {
+		"format-alt": "{:%Y-%m-%d}",
+		"tooltip": false
+	}
+}

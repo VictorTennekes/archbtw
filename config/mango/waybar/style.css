@@ -36,6 +36,10 @@ window#waybar {
 	color: @text;
 }
 
+#workspaces {
+	padding-right: 10px;
+}
+
 #workspaces button {
 	padding: 0 4px;
 	color: @text;
@@ -81,6 +85,10 @@ button:hover {
 	padding: 2px;
 }
 
+#wireplumber muted {
+	padding: 2px;
+}
+
 #custom-notification,
 #custom-sep,
 #tray {
@@ -109,7 +117,7 @@ button:hover {
 
 #bluetooth {
 	padding-left: 4px;
-	padding-right: 4px;
+	padding-right: 0px;
 }
 
 #battery.good {

@@ -7,3 +7,7 @@ export TERMINAL=ghostty
 export CLICOLOR=1
 export LS_COLORS="$(vivid generate catppuccin-mocha)"
 export QT_QPA_PLATFORM=wayland
+
+# --- History ---
+export HISTSIZE=10000
+export SAVEHIST=10000
