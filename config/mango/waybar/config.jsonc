@@ -3,7 +3,6 @@
 	"position": "top",
 	"height": 26,
 	"spacing": 0,
-	"margin": "2 3 2 3",
 	"reload_style_on_change": true,
 	"modules-left": [
 		"ext/workspaces",
@@ -32,8 +31,14 @@
 		"format-icons": {
 			"active": "●"
 		},
-		"ignore-hidden": false,
+		"ignore-hidden": true,
 		"on-click": "activate"
+	},
+	"dwl/window": {
+		"format": "{app_id}",
+		"rewrite": {
+			"com.mitchellh.ghostty": "ghostty",
+		}
 	},
 	"wireplumber": {
 		"node-type": "Audio/Sink",
